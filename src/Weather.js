@@ -7,34 +7,41 @@ export default function Weather() {
       <form>
         <div className="row">
           <div className="col-8">
-            <input
-              type="search"
-              placeholder="Enter a city"
-              className="form-control"
-              autoFocus="on"></input>
+            <div className="input-wrapper">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                className="form-control search-input"
+                autoFocus="on"
+              />
+            </div>
           </div>
           <div className="col-4">
             <input
               type="submit"
-              valuer="Search"
-              className="btn btn-primary"></input>
+              value="Search"
+              className="btn btn-primary search-button"
+            />
           </div>
         </div>
       </form>
+      <h1>Los Angeles</h1>
       <div className="row">
-        <div className="col-8">
-          <h1>Los Angeles</h1>
+        <div className=" col-6 weather-info">
           <ul>
             <li>Monday 15:14, clear sky</li>
-            <li>Humidity: 29%, Wind: 4.63km/h</li>
+            <li>
+              Humidity: <strong>29%</strong>, Wind: <strong>4.63km/h</strong>
+            </li>
           </ul>
         </div>
-        <div className="col-4">
+        <div className=" col-6 temperature-info">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
             alt="Sunny"
           />
-          33℃
+          <span className="temperature">33</span>
+          <span className="unit">℃</span>
         </div>
       </div>
     </div>
