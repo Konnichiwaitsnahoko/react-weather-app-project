@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 import { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
@@ -15,7 +16,7 @@ export default function Weather() {
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
       description: response.data.weather[0].description,
@@ -74,15 +75,9 @@ export default function Weather() {
           <div className=" col-6 weather-info">
             <ul>
               <li>
-                <span>
-                  <FormattedDate date={weatherData.date} />
-                </span>
-                <span>
-                  {" "}
-                  {weatherData.description.charAt(0).toUpperCase() +
-                    weatherData.description.slice(1)}
-                </span>
+                <FormattedDate date={weatherData.date} />{" "}
               </li>
+              <li className="text-capitalize">{weatherData.description}</li>
               <li>
                 Humidity: {""}
                 <strong>{weatherData.humidity}%</strong>, Wind:{" "}
@@ -91,7 +86,10 @@ export default function Weather() {
             </ul>
           </div>
           <div className=" col-6 temperature-info">
-            <img src={weatherData.iconUrl} alt="Sunny" />
+            <div>
+              <WeatherIcon code={weatherData.icon} size={90} color="#FFCC00" />
+            </div>
+
             <span className="temperature">
               {Math.round(weatherData.temperature)}
             </span>
