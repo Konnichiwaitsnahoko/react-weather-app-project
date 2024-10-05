@@ -22,8 +22,6 @@ export default function Weather() {
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
     });
-
-    setReady(true);
   }
 
   function handleSearch(event) {
@@ -72,20 +70,19 @@ export default function Weather() {
         </form>
         <h1>{weatherData.city}</h1>
         <div className="row">
-          <div className=" col-6 weather-info">
+          <div className="col-6 weather-info">
             <ul>
               <li>
                 <FormattedDate date={weatherData.date} />{" "}
               </li>
               <li className="text-capitalize">{weatherData.description}</li>
               <li>
-                Humidity: {""}
-                <strong>{weatherData.humidity}%</strong>, Wind:{" "}
-                <strong>{weatherData.wind}km/h</strong>
+                Humidity: <strong>{weatherData.humidity}%</strong>, Wind:{" "}
+                <strong>{weatherData.wind} km/h</strong>
               </li>
             </ul>
           </div>
-          <div className=" col-6 temperature-info">
+          <div className="col-6 temperature-info">
             <div>
               <WeatherIcon code={weatherData.icon} size={100} color="#FFCC00" />
             </div>
