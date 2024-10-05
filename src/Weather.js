@@ -5,7 +5,7 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Los Angeles");
   const [ready, setReady] = useState({ ready: false });
   const [weatherData, setWeatherData] = useState({});
 
@@ -15,7 +15,7 @@ export default function Weather() {
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       city: response.data.name,
       description: response.data.weather[0].description,
@@ -27,7 +27,11 @@ export default function Weather() {
 
   function handleSearch(event) {
     event.preventDefault();
-    search();
+    if (city.trim() !== "") {
+      search();
+    } else {
+      alert("Please enter a city.");
+    }
   }
 
   function search() {
@@ -70,8 +74,14 @@ export default function Weather() {
           <div className=" col-6 weather-info">
             <ul>
               <li>
-                <FormattedDate date={weatherData.date} />
-                {weatherData.description}
+                <span>
+                  <FormattedDate date={weatherData.date} />
+                </span>
+                <span>
+                  {" "}
+                  {weatherData.description.charAt(0).toUpperCase() +
+                    weatherData.description.slice(1)}
+                </span>
               </li>
               <li>
                 Humidity: {""}
