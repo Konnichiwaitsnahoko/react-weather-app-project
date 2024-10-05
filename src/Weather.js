@@ -8,8 +8,7 @@ import "./Weather.css";
 
 export default function Weather() {
   const [city, setCity] = useState("Los Angeles");
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     console.log(response.data);
