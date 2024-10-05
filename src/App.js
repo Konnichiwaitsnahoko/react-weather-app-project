@@ -11,12 +11,16 @@ export default function App() {
 
         <footer>
           This project is coded by{" "}
-          <a href="https://github.com/Konnichiwaitsnahoko" target="_blank">
+          <a
+            href="https://github.com/Konnichiwaitsnahoko"
+            rel="noreferrer"
+            target="_blank">
             Nahoko Park
           </a>{" "}
           and is opne-sourced on{" "}
           <a
             href="https://github.com/Konnichiwaitsnahoko/react-weather-app-project"
+            rel="noreferrer"
             target="_blank">
             GitHub
           </a>
