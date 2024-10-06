@@ -84,7 +84,7 @@ export default function Weather() {
           </div>
           <div className="col-6 temperature-info">
             <div>
-              <WeatherIcon code={weatherData.icon} size={80} color="#FFCC00" />
+              <WeatherIcon code={weatherData.icon} size={50} color="#FFCC00" />
             </div>
             <WeatherTemperature celsius={weatherData.temperature} />
           </div>

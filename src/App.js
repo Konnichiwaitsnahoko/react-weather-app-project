@@ -6,10 +6,9 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Weather App Project</h1>
         <Weather />
 
-        <footer>
+        <footer >
           This project is coded by{" "}
           <a
             href="https://github.com/Konnichiwaitsnahoko"
