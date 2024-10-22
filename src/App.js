@@ -8,7 +8,7 @@ export default function App() {
       <div className="container">
         <Weather />
 
-        <footer >
+        <footer>
           This project is coded by{" "}
           <a
             href="https://github.com/Konnichiwaitsnahoko"
@@ -16,7 +16,7 @@ export default function App() {
             target="_blank">
             Nahoko Park
           </a>{" "}
-          and is opne-sourced on{" "}
+          and is open-sourced on{" "}
           <a
             href="https://github.com/Konnichiwaitsnahoko/react-weather-app-project"
             rel="noreferrer"
